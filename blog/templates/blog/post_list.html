@@ -8,37 +8,13 @@
     </div>
 
     <div>
-        <p>published: 22.10.2019, 14:40</p>
-        <h2><a href="">My first post</a></h2>
-        <p>HWÆT: WE GAR-DENA    IN GEARDAGUM
-           þeodcyninga    þrym gefrunon.
-           Hu ða æþelingas    ellen fremedon!
-           Oft Scyld Scefing    sceaþena þreatum
-            monegum mægþum    meodosetla ofteah,
-            egsode eorl,    syððan ærest wearð
-            feasceaft funden.    He þæs frofre gebad,
-            weox under wolcnum,    weorðmyndum þah,
-            oð þæt him æghwylc    þara ymbsittendra
-            ofer hronrade    hyran scolde,
-            gomban gyldan.    Þæt wæs god cyning.</p>
-    </div>
-
-    <div>
-        <p>published: 22.10.2019, 15:15</p>
-        <h2><a href="">My second post</a></h2>
-        <p>Ðæm eafera wæs    æfter cenned,
-            geong in geardum,    þone God sende
-            folce to frofre.    Fyrenðearfe ongeat.
-            Þæt hie ær drugon    aldorlease
-            lange hwile.    Him þæs Liffrea,
-            wuldres wealdend,    woroldare forgeaf.
-            Beowulf wæs breme,    blæd wide sprang,
-            Scyldes eafera    Scedelandum in.
-            Swa sceal geong guma    gode gewyrcean,
-            fromum feohgiftum    on fæder |bearme,
-            þæt hine on ylde    eft gewunigen
-            wilgesiþas,    þonne wig cume,
-            leode gelæsten.</p>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </div>
 </body>
 </html>
